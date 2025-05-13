@@ -1,0 +1,349 @@
+body {
+    font-family: 'Inter', Arial, sans-serif; /* Inter font family with fallback to Arial and sans-serif */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+header {
+    background: #000; /* Black background for header */
+    color: white; /* White text color for header */
+    padding: 15px; /* Consistent padding for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+}
+nav {
+    display: flex;
+}
+nav a {
+    position: relative; /* Position relative to enable positioning of the underline */
+    color: white; /* White text color for nav links */
+    padding: 15px;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+nav a::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+     /* Position absolutely relative to the parent anchor */
+    bottom: 10px; /* Positioned at the bottom of the anchor */
+    left: 50%; 
+    width: 0; /* Initially width is 0 */
+    height: 5px; /* Height of the underline */
+    background-color: white; /* Color of the underline */
+    transition: width 0.3s,left 0.3s /* Smooth width and left transition */
+}
+nav a:hover {
+    color: #f4f4f4; /* Change text color on hover */
+}
+nav a:hover::after {
+    width: calc(100% - 30px); 
+    left: 15px; 
+
+}
+
+.section {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh; /* Set height to 100% of viewport height */
+background: url('tea.webp') no-repeat; /* Set background image */
+background-size: cover; /* Cover the entire section */
+position: relative; /* Set position to enable overlay */
+padding: 15px;
+}
+
+.section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5); /* Overlay color */
+z-index: 1; /* Ensure overlay is above text */
+}
+
+.text {
+text-align: center;
+color: white; /* Change text color if needed */
+position: relative; /* Ensure text is above overlay */
+z-index: 2; /* Ensure text is above overlay */
+}
+
+.text h1 {
+font-size: 60px; /* Set h1 font size */
+margin: 0; /* Remove margin */
+}
+
+.text p {
+font-size: 24px; /* Set paragraph font size */
+}
+
+
+.tea-types {
+text-align: center; /* Center the content horizontally */
+}
+
+.tea-type {
+display: inline-block; /* Display each tea type in one row */
+margin: 0 10px; /* Add some margin between tea types */
+vertical-align: top; /* Align tea types to the top */
+width: 200px; /* Set width to ensure consistent spacing */
+text-align: center; /* Center the content horizontally */
+}
+
+.tea-type img {
+max-width: 100px; /* Adjust the maximum width of the icon */
+height: auto; /* Maintain aspect ratio */
+}
+
+.tea-type h3 {
+margin-top: 10px; /* Add some margin between icon and heading */
+font-size: 18px; /* Adjust the font size of the heading */
+}
+
+.tea-type p {
+font-size: 14px; /* Adjust the font size of the description */
+}
+
+
+
+
+.section-heading {
+text-align: center; /* Center the text */
+padding-top: 50px;
+}
+
+.service-item {
+cursor: pointer;
+background-color: #fff;
+text-align: center;
+padding: 30px 20px;
+transition: all 0.7s;
+box-shadow: 0px 0px 15px #cdcdcd;
+margin-right: 20px; /* Add margin between service items */
+}
+
+.service-item:last-child {
+margin-right: 0; /* Remove margin from the last service item */
+}
+
+.service-item:hover {
+background-color: #93f367;
+color: red;
+}
+
+.service-item h4 {
+font-size: 16px;
+font-weight: 700;
+letter-spacing: 0.5px;
+margin-top: 25px;
+margin-bottom: 15px;
+}
+
+.service-item:hover h4 {
+color: #e90707;
+}
+
+.service-item p {
+font-size: 14px;
+margin-bottom: 15px;
+color: #737272; /* Adjust text color */
+}
+.service-item p :hover {
+    color: red;
+
+}
+
+.row {
+display: flex; /* Use flexbox for row layout */
+
+}
+
+
+
+
+.first-service .icon {
+background-image: url(first-service-main.png);
+height: 32px;
+width: 32px;
+display: inline-block;
+}
+
+.first-service:hover .icon {
+background-image: url(first-service-white.png);
+}
+
+.second-service .icon {
+background-image: url(second-service-main.png);
+height: 32px;
+width: 22px;
+display: inline-block;
+}
+
+.second-service:hover .icon {
+background-image: url(second-service-white.png);
+}
+
+.third-service .icon {
+background-image: url(third-service-main.png);
+height: 32px;
+width: 32px;
+display: inline-block;
+}
+
+.third-service:hover .icon {
+background-image: url(third-service-white.png);
+}
+
+.fourth-service .icon {
+background-image: url(fourth-service-main.png);
+height: 32px;
+width: 32px;
+display: inline-block;
+}
+
+.fourth-service:hover .icon {
+background-image: url(fourth-service-white.png);
+}
+
+
+#tea-benefits .row {
+display: flex;
+}
+
+#tea-benefits .col-6 {
+width: 50%;
+padding: 0 15px; /* Add some spacing between the columns */
+box-sizing: border-box; /* Include padding in width calculation */
+}
+
+#tea-benefits .section-content {
+padding: 20px; /* Add padding to the text content */
+}
+
+#tea-benefits .section-image {
+text-align: center; /* Center the image horizontally */
+}
+
+#tea-benefits img {
+max-width: 100%; /* Ensure the image doesn't exceed its container width */
+}
+
+
+
+#contact .section-heading h4 {
+color: #fff;
+}
+
+#contact .section-heading .line-dec {
+background-color: #fff;
+}
+
+#contact .section-heading {
+margin-bottom: 60px;
+}
+
+#contact {
+background-image: url(contact-bg.png);
+background-repeat: no-repeat;
+width: 100%;
+background-size: cover;
+padding: 50px 0; /* Added padding to top and bottom */
+}
+
+#contact .map img {
+width: 100%;
+max-width: 100%; /* Ensures image doesn't exceed container width */
+display: block; /* Ensures image doesn't have extra spacing */
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+width: 100%; /* Full width */
+padding: 12px; /* Some padding */ 
+border: 1px solid #ccc; /* Gray border */
+border-radius: 4px; /* Rounded borders */
+box-sizing: border-box; /* Make sure that padding and width stays in place */
+margin-top: 6px; /* Add a top margin */
+margin-bottom: 16px;/* Bottom margin */
+resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+background-color: #04AA6D;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+border-radius: 5px;
+}
+
+/* Make the sections side by side */
+/* Make the sections side by side */
+.row {
+display: flex;
+margin-right: -15px; /* Add negative margin to compensate for the gap */
+margin-left: -15px; /* Add negative margin to compensate for the gap */
+}
+
+.col {
+width: 50%;
+padding-right: 15px; /* Add padding to create the gap */
+padding-left: 15px; /* Add padding to create the gap */
+}
+
+.col11 {
+width: 43%;
+padding-right: 15px; /* Add padding to create the gap */
+padding-left: 15px; /* Add padding to create the gap */
+}
+
+
+
+.row11{
+padding-bottom: 100px;
+}
+
+.section-heading h1{
+color: #fff !important;
+}
+
+.row {
+display: flex;
+margin-right: -15px;
+margin-left: -15px;
+justify-content: center;
+flex-direction: row;
+}
+
+
+
+
+
+
+
+
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    bottom: 0;
+}
